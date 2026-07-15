@@ -68,7 +68,7 @@ button {
 ========================= */
 
 .container{
-    width:min(1200px,92%);
+    width:min(1400px,94%);
     margin:auto;
 }
 
@@ -180,6 +180,8 @@ section{
     position:relative;
     z-index:2;
     max-width:720px;
+    animation:fadeUp 1s ease;
+    transform:translateX(-50px);
 }
 
 .hero h1{
@@ -427,9 +429,6 @@ height:120px;
 background:linear-gradient(transparent,#fff);
 }
 
-.hero-content{
-animation:fadeUp 1s ease;
-}
 
 @keyframes fadeUp{
 
