@@ -165,6 +165,7 @@ section{
     align-items:center;
     color:white;
     position:relative;
+    padding-top:90px;
 }
 
 .hero-overlay{
@@ -181,7 +182,6 @@ section{
     z-index:2;
     max-width:720px;
     animation:fadeUp 1s ease;
-    transform:translateX(-50px);
 }
 
 .hero h1{

@@ -13,7 +13,8 @@ export default function Hero() {
     >
       <div className="hero-overlay"></div>
 
-      <div className="container hero-content">
+      <div className="hero-container">
+  <div className="hero-content">
 
         <span className="hero-tag">
           ESTABLISHED 2023 • HYDERABAD • PAN INDIA
@@ -62,7 +63,8 @@ export default function Hero() {
 
         </div>
 
-      </div>
+            </div>
+    </div>
     </section>
   );
 }
