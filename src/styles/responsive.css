@@ -1,0 +1,46 @@
+@media (max-width: 992px) {
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.about-boxes{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.section-title{
+font-size:32px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-stats{
+justify-content:center;
+gap:25px;
+}
+
+.about-boxes{
+grid-template-columns:1fr;
+}
+
+.contact-grid,
+.product-grid,
+.gallery-grid,
+.services-grid,
+.industry-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
