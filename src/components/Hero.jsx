@@ -13,7 +13,7 @@ export default function Hero() {
     >
       <div className="hero-overlay"></div>
 
-      <div className="hero-container">
+      <div className="container hero-container">
   <div className="hero-content">
 
         <span className="hero-tag">

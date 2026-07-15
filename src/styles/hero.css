@@ -61,15 +61,18 @@ font-size:12px;
 
 }
 .hero-container{
-    width: min(1400px, 94%);
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    height:100%;
+    display:flex;
+    align-items:center;
 }
 
 .hero-content{
-    max-width: 720px;
-    margin-left: 90px;
+    max-width:760px;
+}
+@media (max-width:768px){
+
+.hero-content{
+    max-width:100%;
+}
+
 }
