@@ -1,31 +1,59 @@
 /* ==========================================
-   GALLERY
+   FACTORY GALLERY
 ========================================== */
 
-#gallery {
-  background: #f8f9fb;
-  padding: 90px 0;
+#gallery{
+    background:#f8f9fb;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+
 }
 
-.gallery-image {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 18px;
-  cursor: pointer;
-  transition: all .35s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+.gallery-card{
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    background:#fff;
+
 }
 
-.gallery-image:hover {
-  transform: scale(1.05);
-  filter: brightness(1.08);
+.gallery-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.gallery-image{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.45s;
+
+}
+
+.gallery-card:hover .gallery-image{
+
+    transform:scale(1.08);
+
 }
 
 /* ==========================================

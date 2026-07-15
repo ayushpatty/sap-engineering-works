@@ -9,32 +9,32 @@ const products = [
   {
     name: "Industrial Flanges",
     image: product1,
-    desc: "High-quality forged and fabricated flanges.",
+    desc: "High-quality forged and fabricated flanges for industrial applications.",
   },
   {
     name: "Pipe Elbows",
     image: product2,
-    desc: "Precision elbows for industrial piping systems.",
+    desc: "Precision manufactured elbows for industrial piping systems.",
   },
   {
     name: "Reducers",
     image: product3,
-    desc: "Reliable reducers for seamless flow transition.",
+    desc: "Reliable reducers for seamless flow transition in pipelines.",
   },
   {
     name: "Blind Flanges",
     image: product4,
-    desc: "Strong sealing solutions for pressure systems.",
+    desc: "Strong sealing solutions for high-pressure industrial systems.",
   },
   {
     name: "Pipe Fittings",
     image: product5,
-    desc: "Complete range of industrial pipe fittings.",
+    desc: "Complete range of industrial pipe fittings for multiple industries.",
   },
   {
     name: "Custom Fabrication",
     image: product6,
-    desc: "Built according to your engineering drawings.",
+    desc: "Engineering solutions manufactured as per customer drawings.",
   },
 ];
 
@@ -42,29 +42,49 @@ export default function Products() {
   return (
     <section id="products">
       <div className="container">
+
         <h2 className="section-title">Featured Products</h2>
 
         <p className="section-subtitle">
-          Precision manufactured industrial products for diverse applications.
+          Precision engineered products built for industrial excellence.
         </p>
 
         <div className="product-grid">
-          {products.map((item) => (
-            <div className="product-card" key={item.name}>
-              <img src={item.image} alt={item.name} />
+
+          {products.map((product) => (
+
+            <div className="product-card" key={product.name}>
+
+              <div className="product-image">
+
+                <img
+                  src={product.image}
+                  alt={product.name}
+                />
+
+              </div>
 
               <div className="product-content">
-                <h3>{item.name}</h3>
 
-                <p>{item.desc}</p>
+                <h3>{product.name}</h3>
 
-                <a href="#contact" className="btn btn-primary">
+                <p>{product.desc}</p>
+
+                <a
+                  href="#contact"
+                  className="btn btn-primary"
+                >
                   Request Quote
                 </a>
+
               </div>
+
             </div>
+
           ))}
+
         </div>
+
       </div>
     </section>
   );

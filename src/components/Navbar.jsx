@@ -85,22 +85,24 @@ export default function Navbar() {
           </a>
 
           <a
-            href="tel:+918919923633"
-            className="btn btn-outline"
-          >
-            <FaPhoneAlt />
-            Call
-          </a>
+  href="tel:+918919923633"
+  className="btn btn-outline"
+  onClick={closeMenu}
+>
+  <FaPhoneAlt />
+  Call
+</a>
 
-          <a
-            href="https://wa.me/918919923633"
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-primary"
-          >
-            <FaWhatsapp />
-            WhatsApp
-          </a>
+<a
+  href="https://wa.me/918919923633"
+  target="_blank"
+  rel="noreferrer"
+  className="btn btn-primary"
+  onClick={closeMenu}
+>
+  <FaWhatsapp />
+  WhatsApp
+</a>
 
         </nav>
 

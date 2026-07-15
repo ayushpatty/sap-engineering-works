@@ -218,22 +218,20 @@ section{
 }
 
 /* =========================
-   NAVBAR
+   NAVBAR V2
 ========================= */
 
 .navbar{
     position:fixed;
-    width:100%;
     top:0;
     left:0;
+    width:100%;
+    z-index:9999;
 
-    z-index:999;
+    background:rgba(11,31,53,.92);
+    backdrop-filter:blur(15px);
 
-    background:rgba(11,31,53,.90);
-
-    backdrop-filter:blur(10px);
-
-    transition:var(--transition);
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
 }
 
 .nav-container{
@@ -250,35 +248,99 @@ section{
 .logo-area{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:16px;
 }
 
 .logo-area img{
-    width:58px;
+    width:62px;
 }
 
 .logo-area h2{
-    color:white;
-    font-size:22px;
+    color:#fff;
+    font-size:24px;
+    margin:0;
 }
 
 .logo-area p{
-    color:#ddd;
+    color:#d4af37;
     font-size:13px;
 }
 
+/* Drawer */
+
 .nav-links{
+
+    position:fixed;
+
+    top:0;
+    right:-360px;
+
+    width:330px;
+    height:100vh;
+
+    background:#071524;
+
     display:flex;
-    gap:34px;
+    flex-direction:column;
+
+    padding:110px 35px;
+
+    gap:24px;
+
+    transition:.35s ease;
+
+    z-index:9998;
+
+    box-shadow:-15px 0 40px rgba(0,0,0,.30);
+
+}
+
+.nav-links.mobile-open{
+    right:0;
 }
 
 .nav-links a{
+
     color:white;
+
+    font-size:18px;
+
     transition:.3s;
+
 }
 
 .nav-links a:hover{
-    color:var(--secondary);
+
+    color:#D4AF37;
+
+    transform:translateX(6px);
+
+}
+
+.menu-btn{
+
+    display:flex;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    z-index:10000;
+
+}
+
+.nav-links .btn{
+
+    margin-top:8px;
+
+    justify-content:center;
+
 }
 
 /* =========================
@@ -291,9 +353,6 @@ section{
     font-size:46px;
 }
 
-.nav-links{
-    display:none;
-}
 
 .section-title{
     font-size:34px;
@@ -307,7 +366,24 @@ section{
 
 @media(max-width:768px){
 
-.hero{
+.logo-area h2{
+font-size:18px;
+}
+
+.logo-area img{
+width:52px;
+}
+
+.nav-links{
+
+width:100%;
+
+right:-100%;
+
+padding:90px 25px;
+
+}
+    .hero{
     text-align:center;
 }
 
@@ -336,51 +412,7 @@ section{
 }
 
 }
-/* =========================
-   MOBILE MENU
-========================= */
 
-.menu-btn{
-    display:none;
-    background:none;
-    color:white;
-    font-size:28px;
-}
-
-@media(max-width:992px){
-
-.menu-btn{
-    display:block;
-}
-
-.nav-links{
-    position:fixed;
-    top:82px;
-    right:-100%;
-    width:280px;
-    height:calc(100vh - 82px);
-
-    background:#0B1F35;
-
-    display:flex;
-    flex-direction:column;
-
-    padding:40px 30px;
-
-    transition:.35s ease;
-
-    box-shadow:-5px 0 20px rgba(0,0,0,.25);
-}
-
-.mobile-open{
-    right:0;
-}
-
-.nav-links a{
-    padding:12px 0;
-}
-
-}
 /* ===========================
    HERO IMPROVEMENTS
 =========================== */
