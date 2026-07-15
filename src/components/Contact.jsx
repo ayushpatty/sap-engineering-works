@@ -3,6 +3,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaClock,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 export default function Contact() {
@@ -10,7 +11,9 @@ export default function Contact() {
     <section id="contact">
       <div className="container">
 
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">
+          Get In Touch
+        </h2>
 
         <p className="section-subtitle">
           We'd love to discuss your industrial engineering requirements.
@@ -19,55 +22,77 @@ export default function Contact() {
         <div className="contact-grid">
 
           <div className="contact-card">
-            <FaPhoneAlt />
-            <h3>Phone</h3>
-            <p>+91 8919923633</p>
+
+            <div className="contact-item">
+              <FaPhoneAlt />
+              <div>
+                <h4>Phone</h4>
+                <p>+91 8919923633</p>
+              </div>
+            </div>
+
+            <div className="contact-item">
+              <FaEnvelope />
+              <div>
+                <h4>Email</h4>
+                <p>pppatnaikt3s@gmail.com</p>
+              </div>
+            </div>
+
+            <div className="contact-item">
+              <FaMapMarkerAlt />
+              <div>
+                <h4>Address</h4>
+                <p>
+                  Road No. 3<br />
+                  Alkapuri Colony<br />
+                  Kothapet<br />
+                  Hyderabad, Telangana - 500035
+                </p>
+              </div>
+            </div>
+
+            <div className="contact-item">
+              <FaClock />
+              <div>
+                <h4>Working Hours</h4>
+                <p>
+                  Monday - Saturday
+                  <br />
+                  10:00 AM - 6:00 PM
+                </p>
+              </div>
+            </div>
+
+            <div className="contact-buttons">
+              <a
+                href="tel:+918919923633"
+                className="btn btn-outline"
+              >
+                Call Now
+              </a>
+
+              <a
+                href="https://wa.me/918919923633"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary"
+              >
+                <FaWhatsapp />
+                WhatsApp
+              </a>
+            </div>
+
           </div>
 
-          <div className="contact-card">
-            <FaEnvelope />
-            <h3>Email</h3>
-            <p>pppatnaikt3s@gmail.com</p>
+          <div className="map-card">
+            <iframe
+              title="SAP Engineering Works"
+              src="https://www.google.com/maps?q=Kothapet,Hyderabad&output=embed"
+              loading="lazy"
+              allowFullScreen
+            />
           </div>
-
-          <div className="contact-card">
-            <FaMapMarkerAlt />
-            <h3>Address</h3>
-            <p>
-              Road No.3<br />
-              Alkapuri Colony<br />
-              Kothapet<br />
-              Hyderabad, Telangana - 500035
-            </p>
-          </div>
-
-          <div className="contact-card">
-            <FaClock />
-            <h3>Working Hours</h3>
-            <p>
-              Monday – Saturday
-              <br />
-              10:00 AM – 6:00 PM
-            </p>
-          </div>
-
-        </div>
-
-        {/* Google Map */}
-
-        <div className="map-container">
-
-          <iframe
-            title="SAP Engineering Works"
-            src="https://www.google.com/maps?q=Kothapet+Hyderabad&output=embed"
-            width="100%"
-            height="420"
-            style={{
-              border: 0,
-              borderRadius: "18px",
-            }}
-            loading="lazy"
-          />
 
         </div>
 

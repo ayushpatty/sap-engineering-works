@@ -336,3 +336,208 @@ grid-template-columns:1fr;
 }
 
 }
+/* ===================================================
+   SERVICES
+=================================================== */
+
+#services{
+    background:#f8f9fb;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.service-card{
+    background:#fff;
+    padding:40px 30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.service-icon{
+    width:80px;
+    height:80px;
+    margin:auto auto 25px;
+    border-radius:50%;
+    background:#0B1F35;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    color:#fff;
+    transition:.35s ease;
+}
+
+.service-card:hover .service-icon{
+    background:#D4AF37;
+    color:#0B1F35;
+}
+
+.service-card h3{
+    font-size:24px;
+    color:#0B1F35;
+    margin-bottom:15px;
+}
+
+.service-card p{
+    color:#666;
+    line-height:1.8;
+}
+
+/* ===================================================
+   WHY CHOOSE US
+=================================================== */
+
+#why{
+    background:#fff;
+}
+
+.choose-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.choose-card{
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s ease;
+}
+
+.choose-card:hover{
+    transform:translateY(-10px);
+}
+
+.choose-icon{
+    width:70px;
+    height:70px;
+    margin:auto auto 20px;
+    border-radius:50%;
+    background:#0B1F35;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    transition:.35s ease;
+}
+
+.choose-card:hover .choose-icon{
+    background:#D4AF37;
+    color:#0B1F35;
+}
+
+.choose-card h3{
+    color:#0B1F35;
+    margin-bottom:12px;
+    font-size:22px;
+}
+
+.choose-card p{
+    color:#666;
+    line-height:1.8;
+}
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media(max-width:768px){
+
+.services-grid,
+.choose-grid{
+    grid-template-columns:1fr;
+}
+
+.service-card,
+.choose-card{
+    padding:30px 24px;
+}
+
+}
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:40px;
+    margin-top:60px;
+}
+
+.contact-card{
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.contact-item{
+    display:flex;
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.contact-item svg{
+    color:#D4AF37;
+    font-size:24px;
+    margin-top:5px;
+}
+
+.contact-item h4{
+    color:#0B1F35;
+    margin-bottom:6px;
+}
+
+.contact-item p{
+    color:#666;
+    line-height:1.8;
+}
+
+.contact-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.map-card{
+    overflow:hidden;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.map-card iframe{
+    width:100%;
+    height:100%;
+    min-height:520px;
+    border:0;
+}
+
+@media(max-width:900px){
+
+.contact-grid{
+    grid-template-columns:1fr;
+}
+
+.map-card iframe{
+    min-height:400px;
+}
+
+.contact-buttons{
+    flex-direction:column;
+}
+
+}
