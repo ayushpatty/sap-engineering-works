@@ -67,7 +67,7 @@ export default function Contact() {
             <div className="contact-buttons">
               <a
                 href="tel:+918919923633"
-                className="btn btn-outline"
+                className="btn call-btn"
               >
                 Call Now
               </a>
