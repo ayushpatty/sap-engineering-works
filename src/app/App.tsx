@@ -9,7 +9,7 @@ const PHONE = "8919923633";
 const WA_NUM = "918919923633";
 const EMAIL = "pppatnaikt3s@gmail.com";
 const ADDRESS = "Road No. 3, Alkapuri Colony, Kothapet, Hyderabad, Telangana – 500035";
-const NAV = ["About", "Services", "Products", "Gallery", "Contact"];
+const NAV = ["About", "Services", "Products", "Gallery", "Certifications", "Testimonials", "Contact"];
 
 /* ─── Logo ─────────────────────────────────────────────────────────── */
 function SapLogo({ dark = false }: { dark?: boolean }) {
@@ -34,7 +34,7 @@ function SapLogo({ dark = false }: { dark?: boolean }) {
 function SectionDivider({ color = "#fff" }: { color?: string }) {
   return (
     <div className="overflow-hidden" style={{ lineHeight: 0 }}>
-      <svg className="w-full h-20 block" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <svg className="w-full h-10 block" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M0,0 C300,120 900,0 1200,80 L1200,120 L0,120 Z" fill={color} />
       </svg>
     </div>
@@ -242,12 +242,12 @@ function Hero() {
 /* ─── About ─────────────────────────────────────────────────────────── */
 function About() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-white">
+    <section id="about" className="py-14 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image side */}
           <div className="relative">
-            <div className="overflow-hidden" style={{ background: "#1c3057" }}>
+            <div className="overflow-hidden rounded-sm" style={{ background: "#1c3057" }}>
               <img
                 src="/about.png"
                 alt="SAP Engineering Works production floor"
@@ -376,7 +376,7 @@ const SERVICES = [
 
 function Services() {
   return (
-    <section id="services" className="py-20 md:py-28 bg-white">
+    <section id="services" className="py-14 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-[#c49a28]" />
@@ -458,7 +458,7 @@ const PRODUCTS = [
 
 function Products() {
   return (
-    <section id="products" className="py-20 md:py-28" style={{ background: "#f5f5f0" }}>
+    <section id="products" className="py-14 md:py-20" style={{ background: "#f5f5f0" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-[#c49a28]" />
@@ -473,6 +473,28 @@ function Products() {
         <p className="text-[#5a6476] mb-14" style={{ fontFamily: "'Barlow', sans-serif" }}>
           Manufactured to precise tolerances and supplied across India.
         </p>
+
+        {/* Product Catalogue Download */}
+        <div className="mb-12 p-6 md:p-8 border border-[#c49a28]/40 bg-white rounded-md" style={{ background: "rgba(196, 154, 40, 0.06)" }}>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+              <h3 className="text-[#0d1a2e] font-black text-lg mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                Complete Product Catalogue
+              </h3>
+              <p className="text-[#5a6476] text-sm" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                Download our comprehensive product specifications, dimensions, materials & standards (PDF)
+              </p>
+            </div>
+            <a
+              href="/product-catalogue.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold tracking-wide uppercase w-fit transition-all hover:brightness-110 flex-shrink-0"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif", background: "#0d1a2e", color: "#fff", letterSpacing: "0.1em" }}
+            >
+              <Download className="w-4 h-4" /> Download PDF
+            </a>
+          </div>
+        </div>
 
         <div className="flex flex-col gap-0 border border-[#0d1a2e]/10">
           {PRODUCTS.map((p, i) => (
@@ -533,7 +555,7 @@ const GALLERY = [
 function Gallery() {
   const [lightbox, setLightbox] = useState<string | null>(null);
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-white">
+    <section id="gallery" className="py-14 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-[#c49a28]" />
@@ -606,7 +628,7 @@ const CERTIFICATIONS = [
 
 function Certifications() {
   return (
-    <section id="certifications" className="py-20 md:py-28" style={{ background: "#f5f5f0" }}>
+    <section id="certifications" className="py-14 md:py-20" style={{ background: "#f5f5f0" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-[#c49a28]" />
@@ -674,7 +696,7 @@ const TESTIMONIALS = [
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-white">
+    <section id="testimonials" className="py-14 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-[#c49a28]" />
@@ -718,6 +740,74 @@ function Testimonials() {
   );
 }
 
+/* ─── Testimonials Gallery ──────────────────────────────────────────────── */
+const TESTIMONIALS_GALLERY = [
+  { url: "/testimonials/testimonial-1.jpeg", alt: "Dehu Engineering" },
+  { url: "/testimonials/testimonial-2.jpeg", alt: "Flash Point" },
+
+];
+
+function TestimonialsGallery() {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+  return (
+    <section id="testimonials-gallery" className="py-14 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px w-8 bg-[#c49a28]" />
+          <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>Client Testimonials Gallery</span>
+        </div>
+        <h2
+          className="text-[#0d1a2e] font-black leading-tight mb-3"
+          style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
+        >
+          Client Feedback & Experiences
+        </h2>
+        <p className="text-[#5a6476] mb-10" style={{ fontFamily: "'Barlow', sans-serif" }}>
+          Visual testimonials and client success stories. Click any image to zoom in.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {TESTIMONIALS_GALLERY.map((img) => (
+            <div
+              key={img.url}
+              className="relative overflow-hidden cursor-pointer group aspect-square"
+              style={{ background: "#1c3057" }}
+              onClick={() => setLightbox(img.url)}
+            >
+              <img
+                src={img.url}
+                alt={img.alt}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/gallery/gallery-1.jpeg";
+                }}
+              />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" style={{ background: "rgba(13,26,46,0.6)" }}>
+                <div className="text-white text-center">
+                  <div className="text-3xl font-black mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>+</div>
+                  <span className="text-sm font-medium" style={{ fontFamily: "'Barlow', sans-serif" }}>Click to zoom</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: "rgba(13,26,46,0.95)" }}
+          onClick={() => setLightbox(null)}
+        >
+          <button className="absolute top-5 right-5 text-white/60 hover:text-white transition-colors" onClick={() => setLightbox(null)}>
+            <X className="w-8 h-8" />
+          </button>
+          <img src={lightbox} alt="Testimonial" className="max-w-full max-h-[85vh] object-contain" />
+        </div>
+      )}
+    </section>
+  );
+}
+
 /* ─── Contact ───────────────────────────────────────────────────────── */
 function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
@@ -732,7 +822,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28" style={{ background: "#0d1a2e" }}>
+    <section id="contact" className="py-14 md:py-20" style={{ background: "#0d1a2e" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left – info */}
@@ -954,6 +1044,8 @@ export default function App() {
         <Certifications />
         <SectionDivider color="#ffffff" />
         <Testimonials />
+        <SectionDivider color="#ffffff" />
+        <TestimonialsGallery />
         <SectionDivider color="#0d1a2e" />
         <Contact />
       </main>
