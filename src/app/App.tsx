@@ -616,13 +616,19 @@ const CERTIFICATIONS = [
     file: "/certificates/ibr-compliance.pdf",
   },
   {
+    title: "PED certification",
+    detail: "Pressure Equipment Directive certification for compliance with European safety standards",
+    file: "/certificates/PED-Certification.pdf",
+  },
+    {
+    title: "Quality Management System (QMS)",
+    detail: "SAP Engineering works is proud to be ISO 9001 QMS certified. This certification proves our dedication to maintaining strict quality management processes, reducing operational risks, and consistently delivering products and services that meet or exceed customer and regulatory expectations",
+    file: "/certificates/QMS-ISO 9001.pdf",
+  },
+    {
     title: "MSME Registration",
     detail: "Government-issued identification provided to Micro, Small, and Medium Enterprises in India",
     file: "/certificates/msme-registration.pdf",
-  },
-  {
-    title: "Project-Specific Approvals",
-    detail: "Certified support for technical drawings, custom fabrication requirements and client-specific standards.",
   },
 ];
 
@@ -744,6 +750,7 @@ function Testimonials() {
 const TESTIMONIALS_GALLERY = [
   { url: "/testimonials/testimonial-1.jpeg", alt: "Dehu Engineering" },
   { url: "/testimonials/testimonial-2.jpeg", alt: "Flash Point" },
+  { url: "/testimonials/testimonial-3.jpg", alt: "Shamraj" },
 
 ];
 
