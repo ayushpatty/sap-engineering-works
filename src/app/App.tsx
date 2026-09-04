@@ -41,6 +41,17 @@ function SectionDivider({ color = "#fff" }: { color?: string }) {
   );
 }
 
+function Eyebrow({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-3 mb-4">
+      <div className="h-px w-8 bg-[#c49a28]" />
+      <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>
+        {label}
+      </span>
+    </div>
+  );
+}
+
 /* ─── Header ────────────────────────────────────────────────────────── */
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -116,7 +127,7 @@ function Header() {
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
           <SapLogo dark />
-          <button onClick={() => setMenuOpen(false)} className="text-white/50 hover:text-white transition-colors">
+          <button onClick={() => setMenuOpen(false)} className="text-white/70 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -164,20 +175,18 @@ function Hero() {
         <img
           src="/hero.png"
           alt="Industrial engineering facility"
-          className="w-full h-full object-cover opacity-25"
+          className="w-full h-full object-cover opacity-10"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #0d1a2e 50%, rgba(13,26,46,0.7) 100%)" }} />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, rgba(13,26,46,0.96) 0%, rgba(13,26,46,0.78) 48%, rgba(13,26,46,0.12) 58%, rgba(13,26,46,0.02) 100%)" }}
+        />
       </div>
       <div className="absolute top-0 left-0 w-1 h-full" style={{ background: "linear-gradient(to bottom, #c49a28, transparent)" }} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-3xl md:-ml-86 lg:-ml-95">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-[#c49a28]" />
-            <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>
-              Industrial Engineering Solutions
-            </span>
-          </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.8fr)]">
+        <div className="max-w-3xl">
+          <Eyebrow label="Industrial Engineering Solutions" />
 
           <h1
             className="font-black text-white leading-[0.95] uppercase mb-6"
@@ -242,7 +251,7 @@ function Hero() {
 /* ─── About ─────────────────────────────────────────────────────────── */
 function About() {
   return (
-    <section id="about" className="py-14 md:py-20 bg-white">
+    <section id="about" className="py-20 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image side */}
@@ -265,10 +274,7 @@ function About() {
 
           {/* Text side */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-8 bg-[#c49a28]" />
-              <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>About Us</span>
-            </div>
+            <Eyebrow label="About Us" />
             <h2
               className="text-[#0d1a2e] font-black leading-tight mb-5"
               style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
@@ -341,7 +347,7 @@ function Stats() {
                 {counts[index].toLocaleString()}
                 {s.suffix}
               </div>
-              <div className="text-white/50 text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Mono', monospace" }}>{s.label}</div>
+              <div className="text-white/70 text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Mono', monospace" }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -376,12 +382,9 @@ const SERVICES = [
 
 function Services() {
   return (
-    <section id="services" className="py-14 md:py-20 bg-white">
+    <section id="services" className="py-20 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px w-8 bg-[#c49a28]" />
-          <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>Our Services</span>
-        </div>
+        <Eyebrow label="Our Services" />
         <h2
           className="text-[#0d1a2e] font-black leading-tight mb-4 max-w-xl"
           style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
@@ -458,12 +461,9 @@ const PRODUCTS = [
 
 function Products() {
   return (
-    <section id="products" className="py-14 md:py-20" style={{ background: "#f5f5f0" }}>
+    <section id="products" className="py-20 md:py-24" style={{ background: "#f5f5f0" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px w-8 bg-[#c49a28]" />
-          <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>Our Products</span>
-        </div>
+        <Eyebrow label="Our Products" />
         <h2
           className="text-[#0d1a2e] font-black leading-tight mb-3"
           style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
@@ -475,7 +475,8 @@ function Products() {
         </p>
 
         {/* Product Catalogue Download */}
-        <div className="mb-12 p-6 md:p-8 border border-[#c49a28]/40 bg-white rounded-md" style={{ background: "rgba(196, 154, 40, 0.06)" }}>
+        <div className="mb-12 grid md:grid-cols-2 gap-4">
+          <div className="p-6 md:p-8 border border-[#c49a28]/40 bg-white rounded-md" style={{ background: "rgba(196, 154, 40, 0.06)" }}>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div>
               <h3 className="text-[#0d1a2e] font-black text-lg mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
@@ -493,6 +494,28 @@ function Products() {
             >
               <Download className="w-4 h-4" /> Download PDF
             </a>
+          </div>
+          </div>
+          {/* Add /company-profile.pdf to public/ when the profile is ready. */}
+          <div className="p-6 md:p-8 border border-[#c49a28]/40 bg-white rounded-md" style={{ background: "rgba(196, 154, 40, 0.06)" }}>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+              <div>
+                <h3 className="text-[#0d1a2e] font-black text-lg mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                  Company Profile PDF
+                </h3>
+                <p className="text-[#5a6476] text-sm" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                  Registration, capabilities and company information for tender and procurement teams.
+                </p>
+              </div>
+              <a
+                href="/company-profile.pdf"
+                download
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold tracking-wide uppercase w-fit transition-all hover:brightness-110 flex-shrink-0"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", background: "#0d1a2e", color: "#fff", letterSpacing: "0.1em" }}
+              >
+                <Download className="w-4 h-4" /> Download PDF
+              </a>
+            </div>
           </div>
         </div>
 
@@ -555,12 +578,9 @@ const GALLERY = [
 function Gallery() {
   const [lightbox, setLightbox] = useState<string | null>(null);
   return (
-    <section id="gallery" className="py-14 md:py-20 bg-white">
+    <section id="gallery" className="py-20 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px w-8 bg-[#c49a28]" />
-          <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>Our Gallery</span>
-        </div>
+        <Eyebrow label="Our Gallery" />
         <h2
           className="text-[#0d1a2e] font-black leading-tight mb-3"
           style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
@@ -634,12 +654,9 @@ const CERTIFICATIONS = [
 
 function Certifications() {
   return (
-    <section id="certifications" className="py-14 md:py-20" style={{ background: "#f5f5f0" }}>
+    <section id="certifications" className="py-20 md:py-24" style={{ background: "#f5f5f0" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px w-8 bg-[#c49a28]" />
-          <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>Certifications</span>
-        </div>
+        <Eyebrow label="Certifications" />
         <h2
           className="text-[#0d1a2e] font-black leading-tight mb-3"
           style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
@@ -701,13 +718,12 @@ const TESTIMONIALS = [
 ];
 
 function Testimonials() {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
   return (
-    <section id="testimonials" className="py-14 md:py-20 bg-white">
+    <section id="testimonials" className="py-20 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px w-8 bg-[#c49a28]" />
-          <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>Testimonials & Reviews</span>
-        </div>
+        <Eyebrow label="Testimonials & Reviews" />
         <h2
           className="text-[#0d1a2e] font-black leading-tight mb-3"
           style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
@@ -741,62 +757,44 @@ function Testimonials() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
 
-/* ─── Testimonials Gallery ──────────────────────────────────────────────── */
-const TESTIMONIALS_GALLERY = [
-  { url: "/testimonials/testimonial-1.jpeg", alt: "Dehu Engineering" },
-  { url: "/testimonials/testimonial-2.jpeg", alt: "Flash Point" },
-  { url: "/testimonials/testimonial-3.jpg", alt: "Shamraj" },
-
-];
-
-function TestimonialsGallery() {
-  const [lightbox, setLightbox] = useState<string | null>(null);
-  return (
-    <section id="testimonials-gallery" className="py-14 md:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px w-8 bg-[#c49a28]" />
-          <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>Client Testimonials Gallery</span>
-        </div>
-        <h2
-          className="text-[#0d1a2e] font-black leading-tight mb-3"
-          style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
-        >
-          Client Feedback & Experiences
-        </h2>
-        <p className="text-[#5a6476] mb-10" style={{ fontFamily: "'Barlow', sans-serif" }}>
-          Visual testimonials and client success stories. Click any image to zoom in.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {TESTIMONIALS_GALLERY.map((img) => (
-            <div
-              key={img.url}
-              className="relative overflow-hidden cursor-pointer group aspect-square"
-              style={{ background: "#1c3057" }}
-              onClick={() => setLightbox(img.url)}
-            >
-              <img
-                src={img.url}
-                alt={img.alt}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/gallery/gallery-1.jpeg";
-                }}
-              />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" style={{ background: "rgba(13,26,46,0.6)" }}>
-                <div className="text-white text-center">
-                  <div className="text-3xl font-black mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>+</div>
-                  <span className="text-sm font-medium" style={{ fontFamily: "'Barlow', sans-serif" }}>Click to zoom</span>
-                </div>
-              </div>
+        <div className="mt-16 border-t border-[#0d1a2e]/10 pt-10">
+          <div className="flex items-end justify-between gap-6 mb-6">
+            <div>
+              <h3 className="text-[#0d1a2e] font-black text-2xl" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                Client Feedback & Experiences
+              </h3>
+              <p className="text-[#5a6476] mt-2" style={{ fontFamily: "'Barlow', sans-serif" }}>
+                Supporting messages from clients who have worked with our team.
+              </p>
             </div>
-          ))}
+            <span className="hidden sm:block text-[#5a6476] text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Mono', monospace" }}>
+              Click to zoom
+            </span>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {TESTIMONIALS_GALLERY.map((img) => (
+              <button
+                key={img.url}
+                type="button"
+                className="relative overflow-hidden cursor-pointer group aspect-square text-left"
+                style={{ background: "#1c3057" }}
+                onClick={() => setLightbox(img.url)}
+              >
+                <img
+                  src={img.url}
+                  alt={img.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/gallery/gallery-1.jpeg";
+                  }}
+                />
+                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" style={{ background: "rgba(13,26,46,0.6)" }}>
+                  <span className="text-white text-sm font-medium" style={{ fontFamily: "'Barlow', sans-serif" }}>View message</span>
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       {lightbox && (
@@ -815,6 +813,12 @@ function TestimonialsGallery() {
   );
 }
 
+const TESTIMONIALS_GALLERY = [
+  { url: "/testimonials/testimonial-1.jpeg", alt: "Dehu Engineering" },
+  { url: "/testimonials/testimonial-2.jpeg", alt: "Flash Point" },
+  { url: "/testimonials/testimonial-3.jpg", alt: "Shamraj" },
+
+];
 /* ─── Contact ───────────────────────────────────────────────────────── */
 function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
@@ -834,17 +838,13 @@ function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left – info */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-8 bg-[#c49a28]" />
-              <span className="text-[#c49a28] text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>Contact Us</span>
-            </div>
             <h2
               className="text-white font-black leading-tight mb-5"
               style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
             >
               {"Let's Build Your Next Project"}
             </h2>
-            <p className="text-white/50 leading-relaxed mb-10 max-w-sm" style={{ fontFamily: "'Barlow', sans-serif" }}>
+            <p className="text-white/70 leading-relaxed mb-10 max-w-sm" style={{ fontFamily: "'Barlow', sans-serif" }}>
               Reach out for quotes, custom engineering requirements or technical enquiries. Our team responds fast.
             </p>
 
@@ -854,7 +854,7 @@ function Contact() {
                   <Phone className="w-4 h-4 text-[#c49a28]" />
                 </div>
                 <div>
-                  <div className="text-white/40 text-[10px] tracking-widest uppercase mb-0.5" style={{ fontFamily: "'DM Mono', monospace" }}>Phone / WhatsApp</div>
+                  <div className="text-white/70 text-[10px] tracking-widest uppercase mb-0.5" style={{ fontFamily: "'DM Mono', monospace" }}>Phone / WhatsApp</div>
                   <div className="text-white font-semibold group-hover:text-[#c49a28] transition-colors" style={{ fontFamily: "'Barlow', sans-serif" }}>
                     {PHONE}
                   </div>
@@ -865,7 +865,7 @@ function Contact() {
                   <Mail className="w-4 h-4 text-[#c49a28]" />
                 </div>
                 <div>
-                  <div className="text-white/40 text-[10px] tracking-widest uppercase mb-0.5" style={{ fontFamily: "'DM Mono', monospace" }}>Email</div>
+                  <div className="text-white/70 text-[10px] tracking-widest uppercase mb-0.5" style={{ fontFamily: "'DM Mono', monospace" }}>Email</div>
                   <div className="text-white font-semibold group-hover:text-[#c49a28] transition-colors break-all" style={{ fontFamily: "'Barlow', sans-serif" }}>{EMAIL}</div>
                 </div>
               </a>
@@ -874,10 +874,23 @@ function Contact() {
                   <MapPin className="w-4 h-4 text-[#c49a28]" />
                 </div>
                 <div>
-                  <div className="text-white/40 text-[10px] tracking-widest uppercase mb-0.5" style={{ fontFamily: "'DM Mono', monospace" }}>Address</div>
+                  <div className="text-white/70 text-[10px] tracking-widest uppercase mb-0.5" style={{ fontFamily: "'DM Mono', monospace" }}>Address</div>
                   <div className="text-white/80 font-medium leading-relaxed" style={{ fontFamily: "'Barlow', sans-serif" }}>{ADDRESS}</div>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-5">
+              {[
+                ["GST Number", "[ADD GST NUMBER]"],
+                ["IBR Licence Number", "[ADD IBR LICENCE NUMBER]"],
+                ["Year Established", "[ADD FOUNDING YEAR]"],
+              ].map(([label, value]) => (
+                <div key={label}>
+                  <div className="text-white/70 text-[10px] tracking-widest uppercase mb-1" style={{ fontFamily: "'DM Mono', monospace" }}>{label}</div>
+                  <div className="text-[#c49a28] text-xs tracking-wide" style={{ fontFamily: "'DM Mono', monospace" }}>{value}</div>
+                </div>
+              ))}
             </div>
 
             {/* Map */}
@@ -968,7 +981,7 @@ function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
           <div>
             <SapLogo dark />
-            <p className="text-white/40 text-sm leading-relaxed mt-5 max-w-xs" style={{ fontFamily: "'Barlow', sans-serif" }}>
+            <p className="text-white/70 text-sm leading-relaxed mt-5 max-w-xs" style={{ fontFamily: "'Barlow', sans-serif" }}>
               Manufacturers of industrial pipe fittings, flanges, steel fabrication and custom engineering solutions. Engineered with precision, delivered across India.
             </p>
             <div className="mt-5">
@@ -984,7 +997,7 @@ function Footer() {
                 <button
                   key={n}
                   onClick={() => document.getElementById(n.toLowerCase())?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-white/40 hover:text-[#c49a28] text-sm text-left transition-colors"
+                  className="text-white/70 hover:text-[#c49a28] text-sm text-left transition-colors"
                   style={{ fontFamily: "'Barlow', sans-serif" }}
                 >
                   {n}
@@ -994,7 +1007,7 @@ function Footer() {
           </div>
           <div>
             <h4 className="text-white font-black uppercase text-xs tracking-widest mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Contact</h4>
-            <div className="flex flex-col gap-2.5 text-sm text-white/40" style={{ fontFamily: "'Barlow', sans-serif" }}>
+            <div className="flex flex-col gap-2.5 text-sm text-white/70" style={{ fontFamily: "'Barlow', sans-serif" }}>
               <a href={`tel:${PHONE}`} className="hover:text-[#c49a28] transition-colors">{PHONE}</a>
               <a href={`mailto:${EMAIL}`} className="hover:text-[#c49a28] transition-colors break-all">{EMAIL}</a>
               <span className="leading-relaxed">Road No. 3, Alkapuri Colony,<br />Kothapet, Hyderabad,<br />Telangana – 500035</span>
@@ -1002,10 +1015,10 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-white/5 pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span className="text-white/25 text-xs" style={{ fontFamily: "'DM Mono', monospace" }}>
+          <span className="text-white/70 text-xs" style={{ fontFamily: "'DM Mono', monospace" }}>
             © 2024 SAP Engineering Works. All rights reserved.
           </span>
-          <span className="text-white/25 text-xs" style={{ fontFamily: "'DM Mono', monospace" }}>
+          <span className="text-white/70 text-xs" style={{ fontFamily: "'DM Mono', monospace" }}>
             Industrial Engineering Solutions
           </span>
         </div>
@@ -1039,21 +1052,12 @@ export default function App() {
         <Hero />
         <SectionDivider color="#ffffff" />
         <About />
-        <SectionDivider color="#0d1a2e" />
         <Stats />
-        <SectionDivider color="#ffffff" />
         <Services />
-        <SectionDivider color="#f5f5f0" />
         <Products />
-        <SectionDivider color="#ffffff" />
         <Gallery />
-        <SectionDivider color="#0d1a2e" />
         <Certifications />
-        <SectionDivider color="#ffffff" />
         <Testimonials />
-        <SectionDivider color="#ffffff" />
-        <TestimonialsGallery />
-        <SectionDivider color="#0d1a2e" />
         <Contact />
       </main>
       <Footer />
