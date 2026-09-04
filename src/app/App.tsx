@@ -882,9 +882,9 @@ function Contact() {
 
             <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-5">
               {[
-                ["GST Number", "[ADD GST NUMBER]"],
-                ["IBR Licence Number", "[ADD IBR LICENCE NUMBER]"],
-                ["Year Established", "[ADD FOUNDING YEAR]"],
+                ["GST Number", "[36BBBPP2303L1ZS]"],
+                ["IBR Licence Number", "[TG/BM-06/2025]"],
+                ["Year Established", "[2023]"],
               ].map(([label, value]) => (
                 <div key={label}>
                   <div className="text-white/70 text-[10px] tracking-widest uppercase mb-1" style={{ fontFamily: "'DM Mono', monospace" }}>{label}</div>
