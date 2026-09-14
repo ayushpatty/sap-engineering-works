@@ -7,7 +7,7 @@ import {
 
 const PHONE = "8919923633";
 const WA_NUM = "918919923633";
-const EMAIL = "pppatnaikt3s@gmail.com";
+const EMAIL = "info@sapengineeringworks.in";
 const ADDRESS = "Road No. 3, Alkapuri Colony, Kothapet, Hyderabad, Telangana – 500035";
 const NAV = ["About", "Services", "Products", "Gallery", "Certifications", "Testimonials", "Contact"];
 
