@@ -310,7 +310,7 @@ function About() {
 /* ─── Stats ─────────────────────────────────────────────────────────── */
 function Stats() {
   const stats = [
-    { value: 50, suffix: "+", label: "Projects Completed" },
+    { value: 20, suffix: "+", label: "Projects Completed" },
     { value: 5, suffix: "+", label: "Industries Served" },
     { value: 1000, suffix: "+", label: "Products Delivered" },
     { value: 3, suffix: "+", label: "Years of Expertise" },
