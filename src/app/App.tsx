@@ -311,11 +311,11 @@ function About() {
 /* ─── Stats ─────────────────────────────────────────────────────────── */
 function Stats() {
   const stats = [
-    { value: 20, suffix: "+", label: "Projects Completed" },
-    { value: 5, suffix: "+", label: "Industries Served" },
-    { value: 1000, suffix: "+", label: "Products Delivered" },
-    { value: 3, suffix: "+", label: "Years of Expertise" },
-  ];
+  { value: 54, suffix: "+", label: "Clients Served" },
+  { value: 5, suffix: "+", label: "Industries Served" },
+  { value: 1000, suffix: "+", label: "Products Delivered" },
+  { value: 3, suffix: "+", label: "Years of Expertise" },
+];
 
   const [counts, setCounts] = useState<number[]>(stats.map(() => 0));
 
