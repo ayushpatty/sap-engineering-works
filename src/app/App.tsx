@@ -8,6 +8,7 @@ import {
 const PHONE = "8919923633";
 const WA_NUM = "918919923633";
 const EMAIL = "info@sapengineeringworks.in";
+const FORM_ENDPOINT = "https://formspree.io/f/mrpeprkj";
 const ADDRESS = "Road No. 3, Alkapuri Colony, Kothapet, Hyderabad, Telangana – 500035";
 const NAV = ["About", "Services", "Products", "Gallery", "Certifications", "Testimonials", "Contact"];
 
@@ -824,12 +825,33 @@ function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+    const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Hi, I am ${form.name} (${form.phone} / ${form.email}). ${form.message}`;
+
+    // WhatsApp first, so the browser doesn't block the popup
     window.open(`https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`, "_blank");
+
+    // Also email the enquiry to info@sapengineeringworks.in via Formspree
+    try {
+      await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+          _subject: `Website enquiry from ${form.name}`,
+        }),
+      });
+    } catch {
+      // WhatsApp has already opened, so the visitor still reaches you
+    }
+
     setSent(true);
     setTimeout(() => setSent(false), 4000);
+    setForm({ name: "", phone: "", email: "", message: "" });
   };
 
   return (
